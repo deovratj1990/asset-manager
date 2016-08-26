@@ -42,7 +42,7 @@ $asset_manager->addHeaderJS('jquery.1.11.2.min.js');
 <br/>
 $asset_manager->addFooterJS('common.js');
 <br/>
-$asset_manager->addFooterJS('bootstrap.min.js', 'common.js'); /* Here bootstrap.min.js will be rendered before common.js */<br/>
+$asset_manager->addFooterJS('bootstrap.min.js', 'common.js'); Here bootstrap.min.js will be rendered before common.js<br/>
 $asset_manager->removeCSS('common.css');<br/>
 $asset_manager->removeJS('common.js');
 </code>
@@ -50,6 +50,6 @@ $asset_manager->removeJS('common.js');
 <strong>Render:</strong>
 <br/>
 <code>
-$asset_manager->renderHeaderAssets(); /* Ideally should be called in head tag. */<br/>
-$asset_manager->renderFooterAssets(); /* Ideally should be called in footer just before closing of body tag. */
+$asset_manager->renderHeaderAssets(); Ideally should be called in head tag.<br/>
+$asset_manager->renderFooterAssets(); Ideally should be called in footer just before closing of body tag.
 </code>

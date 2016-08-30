@@ -124,52 +124,64 @@ class AssetManager
 
 	public function addHeaderCSS($name, $media = "", $before = "")
 	{
-		$css = array();
+		if($this->getAssetIndex($this->assets["header"]["css"], $name) == -1)
+		{
+			$css = array();
 
-		$css["name"] = $name;
-		$css["media"] = (!empty($media) ? $media : "all");
-		$css["calculate_url"] = (strpos($name, "//") === false);
-		$css["before"] = $before;
-		$css["processed"] = false;
+			$css["name"] = $name;
+			$css["media"] = (!empty($media) ? $media : "all");
+			$css["calculate_url"] = (strpos($name, "//") === false);
+			$css["before"] = $before;
+			$css["processed"] = false;
 
-		$this->assets["header"]["css"][] = $css;
+			$this->assets["header"]["css"][] = $css;
+		}
 	}
 
 	public function addHeaderJS($name, $before = "")
 	{
-		$js = array();
+		if($this->getAssetIndex($this->assets["header"]["js"], $name) == -1)
+		{
+			$js = array();
 
-		$js["name"] = $name;
-		$js["calculate_url"] = (strpos($name, "//") === false);
-		$js["before"] = $before;
-		$js["processed"] = false;
+			$js["name"] = $name;
+			$js["calculate_url"] = (strpos($name, "//") === false);
+			$js["before"] = $before;
+			$js["processed"] = false;
 
-		$this->assets["header"]["js"][] = $js;
+			$this->assets["header"]["js"][] = $js;
+		}
 	}
 
 	public function addFooterCSS($name, $media = "all", $before = "")
 	{
-		$css = array();
+		if($this->getAssetIndex($this->assets["footer"]["css"], $name) == -1)
+		{
+			$css = array();
 
-		$css["name"] = $name;
-		$css["media"] = (!empty($media) ? $media : "all");
-		$css["calculate_url"] = (strpos($name, "//") === false);
-		$css["before"] = $before;
-		$css["processed"] = false;
+			$css["name"] = $name;
+			$css["media"] = (!empty($media) ? $media : "all");
+			$css["calculate_url"] = (strpos($name, "//") === false);
+			$css["before"] = $before;
+			$css["processed"] = false;
 
-		$this->assets["footer"]["css"][] = $css;
+			$this->assets["footer"]["css"][] = $css;
+		}
 	}
 
 	public function addFooterJS($name, $before = "")
 	{
-		$js = array();
+		if($this->getAssetIndex($this->assets["footer"]["js"], $name) == -1)
+		{
+			$js = array();
 
-		$js["name"] = $name;
-		$js["calculate_url"] = (strpos($name, "//") === false);
-		$js["before"] = $before;
-		$js["processed"] = false;
+			$js["name"] = $name;
+			$js["calculate_url"] = (strpos($name, "//") === false);
+			$js["before"] = $before;
+			$js["processed"] = false;
 
-		$this->assets["footer"]["js"][] = $js;
+			$this->assets["footer"]["js"][] = $js;
+		}
 	}
 
 	public function removeCSS($name)
